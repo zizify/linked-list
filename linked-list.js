@@ -1,5 +1,6 @@
 //implement class
-class LinkedList {
+
+ class LinkedList {
 	constructor() {
 		this.length = 0;
 		this.head = null;
@@ -63,3 +64,7 @@ class LinkedList {
 		this.length--;
 	}
 }
+
+
+module.exports = LinkedList 
+
