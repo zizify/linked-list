@@ -133,12 +133,40 @@ function reverseList(currentNode) {
 	return reverseFromNext;
 }
 
-console.log(reverseList(linkedList.head));
+// console.log(reverseList(linkedList.head));
 
 
 
 /// EXERCISE 6
+const cycleList = new LinkedList();
+cycleList.insert(0, 1);
+cycleList.insert(1, 4);
+cycleList.insert(2, 6);
+cycleList.insert(3, 3);
+cycleList.insert(4, 3);
+cycleList.insert(5, 3);
 
+//Create a cycle in the list
+cycleList.head.next.next = cycleList.head;
+
+function inCycle(list){
+	let slow = list.head;
+	let fast = list.head;
+    
+	while(slow !== null && fast !== null && fast.next !== null) {
+		slow = slow.next;
+		fast = fast.next.next;
+        
+		if (slow === fast) {
+			console.log('Cyclical.');
+			return;
+		}
+	}
+	console.log('Linear.');
+}
+
+inCycle(cycleList);
+inCycle(linkedList);
 
 
 /// EXERCISE 7
