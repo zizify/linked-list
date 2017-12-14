@@ -12,12 +12,15 @@ linkedList.insert(3, 'D')
 
 // displays the linked list
 function printList(linkedList) {
-    for(let i=0; i < linkedList.length; i++){
-        console.log(linkedList.get(i))
+    let currentNode = linkedList.head;
+    while (currentNode !== null) {
+        console.log(currentNode.value)
+        currentNode = currentNode.next
     }
-} 
+}
 
-// printList(linkedList)
+
+printList(linkedList)
 
 function listLength(linkedList){
     let i = 0;
@@ -29,4 +32,4 @@ function listLength(linkedList){
     return i
 }
 
-console.log(listLength(linkedList))
+console.log(listLength(linkedList, 'listLength'))
