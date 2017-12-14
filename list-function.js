@@ -111,9 +111,29 @@ function findThirdFromEnd(linkedList){
 	return currentNode.value;
 }
 
-console.log(findThirdFromEnd(linkedList));
+// console.log(findThirdFromEnd(linkedList));
 
 /// EXERCISE 5
+
+function reverseList(currentNode) {
+	if (currentNode === null) {
+		return null;
+	}
+
+	if (!currentNode.next) {
+		return currentNode;
+	}
+    
+	let nextNode = currentNode.next;
+	currentNode.next = null;
+
+	const reverseFromNext = reverseList(nextNode);
+	nextNode.next = currentNode;
+    
+	return reverseFromNext;
+}
+
+console.log(reverseList(linkedList.head));
 
 
 
